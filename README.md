@@ -9,7 +9,7 @@
 ## build
 
 ```bash
-$ buildah bud -t xpra_with_gpu .
+$ buildah bud --build-arg VIRTUALGL_VER=3.0.2 -t xpra_with_gpu .
 ```
 
 ## run
