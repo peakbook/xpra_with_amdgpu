@@ -19,9 +19,10 @@ $ podman run --rm -it -e XPRA_PASSWORD="yourpass" --device=/dev/dri -p 14500:145
 # then, open the url https://{host}:14500/ with your browser
 ```
 
-- Use your cert
+- Use self-signed cert
 ```bash
-$ podman run --rm -it -e XPRA_PASSWORD="yourpass" --device=/dev/dri -p 14500:14500 -v $(pwd)/your-cert.pem:/work/ssl-cert.pem:ro xpra_with_gpu
+$ make gen  # generate self-signed keys
+$ podman run --rm -it -e XPRA_PASSWORD="yourpass" --device=/dev/dri -p 14500:14500 -v $(pwd)/srv.pem:/work/ssl-cert.pem:ro xpra_with_gpu
 ```
 
 ## screenshot
